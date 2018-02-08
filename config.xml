@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<widget xmlns   = "http://www.w3.org/ns/widgets"
+    xmlns:gap   = "http://phonegap.com/ns/1.0"
+    id          = "com.phonegap.example"
+    versionCode = "10"
+    version     = "1.0.0" >
+
+<!-- versionCode is optional and Android only -->
+
+  <name>М Портал</name>
+
+  <description>
+      Информационно-образовательный портал Финуниверситета. Мобильная версия
+  </description>
+
+  <author href="http://ruslan.cc" email="mail@ruslan.cc">
+      RuslanCC
+  </author>
+
+  <icon src="res/icon.png" />
+
+	<gap:plugin name="cordova-plugin-geolocation" source="npm" />
+  <gap:plugin name="cordova-plugin-file" source="npm" />
+  <gap:plugin name="cordova-plugin-device" source="npm" />
+	<gap:plugin name="cordova-plugin-whitelist" version="1.1.0" source="npm" />
+	<access origin="*" launch-external="yes" />
+	<allow-intent href="http://*/*" />
+	<allow-intent href="https://*/*" />
+
+</widget>

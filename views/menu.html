@@ -1,0 +1,75 @@
+    <div class="aside-backdrop"></div>
+    <div class="aside">
+        <div class="aside-header">
+            <div class="corner">
+                <div class="logo"></div>
+            </div>
+        </div>
+        <div class="aside-contents">
+            <ul class="saide-menu" id="mainmenu">
+            </ul>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-fixed-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+                    <div class="btn-menu">
+                        <a href="#" onclick="$('.aside').asidebar('open')"><span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span></a>
+                    </div>
+                    <div class="back" style="display:none;">
+                    <a href="#" onclick="goback()"><span class="glyphicon glyphicon-chevron-left"></span></a>
+                </div>
+                        <div class="back2" style="display:none;">
+                            <a href="#" onclick="goback2()"><span class="glyphicon glyphicon-chevron-left"></span></a>
+                        </div>
+
+                    <div class="curr-page">
+
+                    </div>
+                    <div class="pull-right rp25">
+                        <!--<a href="#" title=""><div class="notification"></div></a>-->
+                        <a href="#" id="MOB_TIMETABLE_ACCOUNT_" title=""><div class="calend"></div></a>
+                        <a href="#" data-toggle="modal" data-target="#UserInfo" title=""><div class="user"></div></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container" id="content">
+        <div id="alert"></div>
+        <h4 id="headname"></h4>
+
+        <div id="search">
+        </div>
+        <div id="messages" class="cont"></div>
+
+        <div id="results"></div>
+        <div id="ummt"></div>
+    </div>
+    <div class="modal fade" id="UserInfo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content user-content">
+                    <div class="user-header">ИНФОРМАЦИЯ О ПОЛЬЗОВАТЕЛЕ</div>
+                <div class="user-body">
+                </div>
+                <div class="user-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="Marks" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content user-content">
+                <div class="marks-header"></div>
+                <div class="marks-body">
+                </div>
+                <div class="marks-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+                </div>
+            </div>
+        </div>
+    </div>

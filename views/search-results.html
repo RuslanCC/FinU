@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link rel="icon" href="http://getbootstrap.com/favicon.ico">
+
+	<title>Starter Template for Bootstrap</title>
+
+	<!-- Bootstrap core CSS -->
+	<link href="./css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+	<link href="./css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+	<!-- Custom styles for this template -->
+	<link href="./css/general.css" rel="stylesheet">
+
+	<!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+
+	<script src="./js/ie-emulation-modes-warning.js"></script>
+
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+
+</head>
+
+<body>
+	<div class="wrapper">
+
+		<div class="aside-backdrop"></div>
+
+		<div class="aside">
+			<div class="aside-header">
+				<div class="corner">
+					<div class="logo"></div>
+				</div>
+			</div>
+			<div class="aside-contents">
+				<ul class="saide-menu">
+					<li class="sheduler"><a href="#">Расписание занятий</a></li>
+					<li class="learn"><a href="#">Обучение</a></li>
+					<li class="doc active" data-toggle="collapse" data-target=".child-list"><a href="#">Электронная зачетка</a></li>
+						<ul class="collapse in child-list">
+							<li class="one-item"><a href="#">успеваемость</a></li>
+							<li class="active two-item"><a href="#">задолженности</a></li>
+							<li class="three-item"><a href="#">перезачеты</a></li>
+						</ul>
+					<li class="messages"><a href="#">Сообщения</a></li>
+					<li class="options"><a href="#">Настройки</a></li>
+					<li class="exit"><a href="#">Выход</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<nav class="navbar navbar-fixed-top">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">							
+						<div class="btn-menu">
+							<a href="#" onclick="$('.aside').asidebar('open')"><span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span></a>
+						</div>
+						<div class="pull-right">
+							<a href="#" title=""><div class="notification"></div></a>
+							<a href="#" title=""><div class="calend"></div></a>
+							<a href="#" title=""><div class="user"></div></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+
+		<div class="content">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+						<h4 style="margin-bottom: 30px;">Название раздела</h4>
+						<div class="results">
+							<div class="results-header"><span style="padding-left: 30px;">Результаты поиска</span></div>
+							<table class="table table-striped table-hover results-table">
+								<tbody>
+									<tr>
+										<td>data</td>
+										<td>data</td>
+										<td>data</td>
+									</tr>
+									<tr>
+										<td>data</td>
+										<td>data</td>
+										<td>data</td>
+									</tr>
+									<tr>
+										<td>data</td>
+										<td>data</td>
+										<td>data</td>
+									</tr>
+								</tbody>
+							</table>							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3"></div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+
+	<!-- Bootstrap core JavaScript
+	================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script src="./js/bootstrap.min.js"></script>
+	<script src="./js/asidebar.jquery.js"></script>
+	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+	<script src="./js/ie10-viewport-bug-workaround.js"></script>
+
+
+</body>
+
+</html>
