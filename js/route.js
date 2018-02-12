@@ -70,6 +70,7 @@ function route(path)
             break;
         case 'render_Message':
             $('#messages').show();
+            $('#All_messages').hide();
             $('#Read_message').show();
             $('.btn-menu').hide();
             $('#MOB_TIMETABLE_ACCOUNT_').hide();
@@ -78,9 +79,9 @@ function route(path)
         case 'render_MessagesAll':
             $('#messages').show();
             $('#All_messages').show();
-            $('.btn-menu').hide();
-            $('#MOB_TIMETABLE_ACCOUNT_').hide();
-            $('.back2').show();
+           // $('.btn-menu').hide();
+          //  $('#MOB_TIMETABLE_ACCOUNT_').hide();
+          //  $('.back2').show();
             break;
         case 'back2':
             $('.btn-menu').show();

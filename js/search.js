@@ -27,6 +27,12 @@ function initDate()
     DateState=localStorage.getItem('DateState');
     if (DateState!=null)
         $('#date').val(DateState);
+    else
+    {
+        var a = moment(new Date);
+        $('#date').val(a.format('Y-MM-DD'));
+
+    }
 }
 
 function initSearchGroups(that)
@@ -117,7 +123,7 @@ function searchResults()
         case 'MOB_TIMETABLE_ACCOUNT':
             if ($('#date').val()=='') {
                 var a = moment(new Date);
-                $('#date').val(a.format('Y-MM-D'));
+                $('#date').val(a.format('Y-MM-DD'));
             }
             load_MOB_TIMETABLE_ACCOUNT();
             break;

@@ -156,6 +156,7 @@ function renderMenu(functions) {
 
     $('.exit').on('click', logOff);
 
-    $('#'+functions[0]).click();
+    //$('#'+functions[0]).click();
+        $('#MOB_TIMETABLE_ACCOUNT').click();
     }
 }

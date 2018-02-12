@@ -83,6 +83,24 @@ function render_new_message()
 
 
     $('#New_Message').find('tbody').html(tbody);
+    handleFileSelect=function(e){
+        selDiv = document.querySelector("#selectedFiles");
+
+        if(!e.target.files) return;
+
+        selDiv.innerHTML = "";
+
+        var files = e.target.files;
+        for(var i=0; i<files.length; i++) {
+            var f = files[i];
+
+            selDiv.innerHTML += f.name + "<br/>";
+
+        }
+    };
+
+    document.querySelector('#fileInput').addEventListener('change', handleFileSelect, false);
+
     $('.selectpicker').selectpicker();
     $("form#data").submit(function(e) {
         e.preventDefault();
@@ -216,7 +234,7 @@ function render_message()
     tbody+='<tr><td colspan="2">'+"<div class='MessageHeader'>"+d.Subject+"</div>"+'</td><td>'+(d.AttachmenName!=''?"<i class='glyphicon glyphicon-paperclip smicon addatachment' data-name='"+d.AttachmenName+"' data-id='"+d.Id+"'/>":"")+'</td></tr>';
     tbody+='<tr><td><img class="img-circle usr-img" data-id='+d.SenderId+'></td><td>'+"<div class='MessageSender'>"+d.SenderName+"</div>"+'<div class="MessageRecepient">кому: мне</div></td><td>'+"<div class='SendTime'>"+sendstr+"</div>"+'</td></tr>';
     tbody+="<tr><td colspan='3'>"+d.Text+"</td></tr>";
-    tbody+="<tr><td colspan='3'><div id='att'></div></td></tr>";
+    tbody+="<tr><td colspan='3' id='att'></td></tr>";
 
     $('#Read_message').find('tbody').html(tbody);
     populate_images();
@@ -261,21 +279,24 @@ function populate_attachment(id,name)
 function save_file(FILE_NAME, FILE_DATA)
 {
     var storageLocation = "";
-    console.log(device.platform);
-    switch (device.platform) {
+    if (typeof(device)!=='undefined') {
+        console.log(device.platform);
+        switch (device.platform) {
 
-        case "Android":
-            storageLocation = 'file:///storage/emulated/0/';
-            break;
-        case "iOS":
-            storageLocation = cordova.file.documentsDirectory;
-            break;
+            case "Android":
+                storageLocation = 'file:///storage/emulated/0/';
+                break;
+            case "iOS":
+                storageLocation = cordova.file.documentsDirectory;
+                break;
+        }
     }
-
+    else storageLocation='';
     var errorCallback = function(e) {
         console.log("Error: " + e)
     };
 
+    if (typeof(window.resolveLocalFileSystemURL)=='function')
     window.resolveLocalFileSystemURL(storageLocation,
         function (fileSystem) {
             fileSystem.getDirectory('Download', {
@@ -290,13 +311,24 @@ function save_file(FILE_NAME, FILE_DATA)
                         function (fileEntry) {
                             fileEntry.createWriter(function (writer) {
                                 writer.onwriteend = function () {
-                                    console.log("Сохранено");
-                                    console.log(fileEntry.toURL());
                                     var a = window.document.createElement('a');
-                                    a.text=name;
-                                    a.href = fileEntry.toURL();//window.URL.createObjectURL(xhr.response);
-                                    a.download = name;
-                                    $('#att').append(a);
+                                    a.text=FILE_NAME;
+                                    //a.href = fileEntry.toURL();//window.URL.createObjectURL(xhr.response);
+                                    a.href='#';
+
+                                    $('#att')
+                                        .data('url',fileEntry.toURL())
+                                        .on('touchstart mousedown',function(){
+                                            var onSuccess = function(data) {
+                                                console.log('message: ' + data.message);
+                                            };
+                                            function onError(error) {
+                                                console.log('message: ' + error.message);
+                                            }
+                                            console.log('!');
+                                            window.cordova.plugins.FileOpener.openFile($('#att').data('url'), onSuccess, onError);
+                                        })
+                                        .append(a);
 
                                 };
                                 writer.seek(0);

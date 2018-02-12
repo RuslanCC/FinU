@@ -6,7 +6,8 @@
     version     = "1.0.0" >
 
 <!-- versionCode is optional and Android only -->
-
+    <preference name="phonegap-version" value="cli-7.1.0" />
+    <preference name="android-targetSdkVersion" value="23" />
   <name>М Портал</name>
 
   <description>
@@ -17,13 +18,14 @@
       RuslanCC
   </author>
 
-  <icon src="res/icon.png" />
+  <icon src="icon.png" />
 
-	<gap:plugin name="cordova-plugin-geolocation" source="npm" />
-  <gap:plugin name="cordova-plugin-file" source="npm" />
-  <gap:plugin name="cordova-plugin-device" source="npm" />
-	<gap:plugin name="cordova-plugin-whitelist" version="1.1.0" source="npm" />
-	<access origin="*" launch-external="yes" />
+	<plugin name="cordova-plugin-geolocation"/>
+    <plugin name="cordova-plugin-file"/>
+    <plugin name="cordova-plugin-device"/>
+	<plugin name="cordova-plugin-whitelist"/>
+    <plugin name="cordova-plugin-fileopener"/>
+    <access origin="*" launch-external="yes" />
 	<allow-intent href="http://*/*" />
 	<allow-intent href="https://*/*" />
 
